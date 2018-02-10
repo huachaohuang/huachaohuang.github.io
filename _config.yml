@@ -1,0 +1,17 @@
+# Site settings
+title: "Huachao's Backend"
+description: "Code, Coffee & Croissant"
+
+url: "http://huachaohuang.com"
+github_username: huachaohuang
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+theme: minima
+minima:
+  date_format: "%Y-%m-%d"
+disque:
+  shortname: huachaohuang
