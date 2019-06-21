@@ -4,6 +4,7 @@ description: "Code, Coffee & Croissant"
 
 url: "http://huachaohuang.com"
 github_username: huachaohuang
+google_analytics: UA-48129786-2
 
 # Build settings
 markdown: kramdown
