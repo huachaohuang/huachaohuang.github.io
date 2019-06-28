@@ -14,5 +14,5 @@ plugins:
 theme: minima
 minima:
   date_format: "%Y-%m-%d"
-disque:
+disqus:
   shortname: huachaohuang
