@@ -135,22 +135,25 @@ These terms can be confusing, so I decide to name it *Control Layer* here based 
 
 To understand this layer, you need to get some basic knowledge about CPU first.
 You can check this video to [See How a CPU Works](https://www.youtube.com/watch?v=cNN_tTXABUA).
-A CPU can't communicate with other devices directly because they don't share the same physical and electrical characteristics (I will talk about that later).
-Instead, a CPU needs to access some specific addresses (or registers) binding to a controller and then lets the controller deal with other devices for it.
-So, this layer defines the interface between a CPU and a controller, for example, specifies how to put a command to a command queue.
+A CPU can't communicate with other devices directly because they don't share the same physical and electrical characteristics.
+Instead, a CPU needs to access some specific addresses (or registers) mapping to a controller and then lets the controller deal with other devices for it.
+So, this layer defines the interface between a CPU and a controller, for example, to specifies how to put a command to a command queue.
 
 ATA, AHCI, and NVMe standards contain specifications about this layer.
 
 ATA defines the interface to interact with PATA devices over parallel buses.
 SATA devices use AHCI instead, which works as a PCI device.
+However, if some operating systems don't support an AHCI driver, many motherboards also offer a "Legacy Mode" option, which makes SATA devices work like PATA devices on an ATA controller, but sacrifices support for some features of SATA.
+
 NVMe defines the interface to interact with NVM devices over PCIe buses.
 Again, NVMe has been designed from the group up for SSDs since AHCI can't deliver the optimal performance with SSDs.
 Check this [comparison between NVMe and AHCI](https://en.wikipedia.org/wiki/NVM_Express#Comparison_with_AHCI).
+
 What about SCSI devices, you may ask.
 Well, I can't find any public SCSI standard about this layer, so I think vendors don't come up a common standard here.
 But I can find some vendor-specific drivers on Linux that implement the interfaces for SCSI devices.
 
-I will talk about different buses next.
+Next, I will talk about some buses I mentioned above.
 
 ## Transport Layer
 
@@ -160,7 +163,7 @@ Most standards describe how storage devices communicate with each other in three
 - Transport Layer: specifies the protocol (interaction) between two devices, including frame formats and how frames are processed, etc
 
 I redefine the *Transport Layer* here to include all the three layers above.
-Because as an upper-level software developer, I don't deal with those layers as long as these devices can talk to each other.
+Because as an upper-level software developer, I don't need to deal with all the details as long as these devices can talk to each other.
 
 In computer architecture, people use the term [bus](https://en.wikipedia.org/wiki/Bus_(computing)) to represent a communication system that transfers data between components.
 There are two kinds of buses: parallel and serial.
@@ -175,8 +178,8 @@ Each of them defines a parallel bus and a serial bus. Let's put them into a tabl
 | Parallel | SCSI Parallel Interface (SPI) | Parallel ATA (PATA) | Conventional PCI   |
 | Serial   | Serial Attached SCSI (SAS)    | Serial ATA (SATA)   | PCI Express (PCIe) |
 
-Nowadays, parallel interfaces are mostly replaced by serial interfaces because of their better performance.
-These buses have evolved a few versions, providing higher and higher speed to suit the evolution of other devices.
+Nowadays, parallel buses are mostly replaced by serial buses, which are faster and simpler.
+These buses have evolved a few versions over the decades, providing higher and higher speed to suit the evolution of other devices.
 
 ## Storage Architecture Model
 
