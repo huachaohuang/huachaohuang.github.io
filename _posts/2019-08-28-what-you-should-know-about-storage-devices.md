@@ -185,7 +185,39 @@ These buses have evolved a few versions over the decades, providing higher and h
 
 Now we can put all the layers together and build our storage architecture model.
 
-![Storage Architecture Model](/images/storage_architecture_model.png)
+<table style="table-layout: fixed; text-align: center;">
+    <tr>
+        <th colspan="3">Standards</th>
+        <th colspan="2">SCSI</th>
+        <th colspan="2">ATA</th>
+        <th colspan="2">PCI</th>
+    </tr>
+    <tr>
+        <th colspan="3">Command Layer</th>
+        <td colspan="2">SCSI</td>
+        <td colspan="2">ATA</td>
+        <td colspan="2">NVMe</td>
+    </tr>
+    <tr>
+        <th colspan="3">Control Layer</th>
+        <td colspan="2"></td>
+        <td colspan="1">ATA</td>
+        <td colspan="1">AHCI</td>
+        <td colspan="2">NVMe</td>
+    </tr>
+    <tr>
+        <th colspan="3">Transport Layer</th>
+        <td colspan="1">SPI</td>
+        <td colspan="1">SAS</td>
+        <td colspan="1">PATA</td>
+        <td colspan="1">SATA</td>
+        <td colspan="2">PCIe</td>
+    </tr>
+    <tr>
+        <th colspan="3">Storage Media Layer</th>
+        <td colspan="6">HDD: Magnetic Disk, SSD: NAND Flash, 3D XPoint</td>
+    </tr>
+</table>
 
 That's it, clean and compact. Next time you ask me what a SATA HDD or an NVMe SSD is, I can tell you loud and clear.
 
