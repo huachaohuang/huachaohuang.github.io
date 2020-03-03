@@ -11,11 +11,13 @@ I have a solid understanding of storage engine, consensus algorithm, distributed
 
 ## Experience
 
-I don't have a job right now.
+### [ByteDance](https://www.bytedance.com)
+
+*2020 - Present*
 
 ### [PingCAP](https://www.pingcap.com)
 
-**Team Lead**
+**Tech Lead**
 
 *2018 - 2019*
 
