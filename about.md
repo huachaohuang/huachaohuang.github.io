@@ -6,7 +6,7 @@ permalink: /about/
 
 I am an experienced software engineer with a passionate interest in infrastructure software.
 
-I have more than five years of experience in distributed storage systems.
+I have many years of experience in distributed storage systems.
 I have a solid understanding of storage engine, consensus algorithm, distributed transaction, and other [database techniques](https://github.com/huachaohuang/awesome-dbdev).
 
 ## Experience
